@@ -22,7 +22,9 @@ export class NavComponent implements OnInit {
   login(){
     this.accountService.login(this.model).subscribe( response => { 
       this.router.navigateByUrl('/members');
-    }, error => {
+    }, 
+    // The lecturer has removed the error handling but mine works fine, it displays if username or password are incorrect
+    error => {
       console.log(error);
       this.toastr.error(error.error);
     })
